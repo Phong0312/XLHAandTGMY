@@ -1,0 +1,16 @@
+Tiền xử lý ảnh :
+
+Đầu tiên, hình ảnh cần được chuyển đổi thành ảnh xám (ảnh xám) để đơn giản hóa quá trình xử lý.
+Sau đó, áp dụng bộ lọc Gaussian để làm mờ ảnh, giúp loại bỏ nhiễu (nhiễu) trong ảnh và cải thiện kết quả phân đoạn.
+Áp dụng trình biên dịch toán tử :
+
+Sobel : Tính gradient của ảnh theo hướng x và y, sau đó chúng kết hợp để phát hiện các cạnh mạnh mẽ hơn.
+Prewitt : Tương tự như Sobel, nhưng sử dụng các bộ lọc khác nhau cho các hướng x và y để tính toán độ dốc, giúp phát hiện các cạnh theo chiều ngang và dọc.
+Robert : Tính gradient dựa trên các phần tử lân cận chéo, thích hợp để phát hiện các cạnh mạnh nhưng có độ nhạy cao và nhiễu.
+Canny : Là thuật toán phát hiện biên mạnh nhất, thực hiện các bước như làm mịn Gaussian, tìm gradient, triệt tiêu không tối đa và ngưỡng trễ để xác định các cạnh.
+Đoạn kết quả hợp nhất :
+
+Sau khi áp dụng từng toán tử, hợp nhất các phân đoạn kết quả hoặc chọn một kết quả tốt nhất (Thường là Canny hoặc Sobel cho ảnh vệ tinh).
+Bộ lọc sau xử lý (tùy chọn) :
+
+Để làm tăng hoặc giảm nhiễu trên biên phát hiện, có thể áp dụng các bộ lọc trung bình (trung vị) hoặc các kỹ thuật xử lý hình thái (hoạt động hình thái) như mở và đóng.
